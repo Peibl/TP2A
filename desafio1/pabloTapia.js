@@ -1,16 +1,8 @@
 let data = require('./data');
-<<<<<<< HEAD
-console.log(data)
 normalizeData();
 const totalSeconds = dataToArray()
     .filter(isFlexboxVideo)
     .map(getminutesAndSecondFromString)
-=======
-normalizeData();
-const totalSeconds = dataToArray()
-    .filter(isFlexboxVideo)
-    .map(mapStringForMinutesAnsSeconds)
->>>>>>> a5a5b07134cd173ae7debe286f3f35aec1ef1ddb
     .map(minutesAndSecondsToTotalSeconds)
     .reduce((total, num) => total += num)
 
