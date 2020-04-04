@@ -1,6 +1,7 @@
-let data = require('./data');
-normalizeData();
-const totalSeconds = dataToArray()
+const data = require('./data');
+
+const totalSeconds = normalizeData(data)
+    .split('</li>')
     .filter(isFlexboxVideo)
     .map(getminutesAndSecondFromString)
     .map(minutesAndSecondsToTotalSeconds)
@@ -8,25 +9,24 @@ const totalSeconds = dataToArray()
 
 console.log(`Segundos totales: ${totalSeconds}`);
 
-function dataToArray() {
-    return data.split('</li>');
+function normalizeData(data) {
+    const normalizeData = data
+        .replace('<ul>', '')
+        .replace('</ul>', '')
+        .toLowerCase()
+    return normalizeData
+
 }
 
 function isFlexboxVideo(value) {
     return value.includes('flexbox');
 }
 
-function minutesAndSecondsToTotalSeconds(value) {
-    let [minutes, seconds] = value.split(":").map(value => parseInt(value, 10))
-    return minutes * 60 + seconds;
-}
-
 function getminutesAndSecondFromString(value) {
     return value.substring(value.indexOf("\"") + 1, value.lastIndexOf("\""));
 }
 
-function normalizeData() {
-    data = data.replace('<ul>', '');
-    data = data.replace('</ul>', '');
-    data = data.toLowerCase();
+function minutesAndSecondsToTotalSeconds(value) {
+    let [minutes, seconds] = value.split(":").map(value => parseInt(value, 10))
+    return minutes * 60 + seconds;
 }
