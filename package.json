@@ -1,0 +1,23 @@
+{
+  "name": "betp2a",
+  "version": "1.0.0",
+  "description": "Repo de ejercicio del taller",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ORT-PabloFernandez/TP2A.git"
+  },
+  "author": "Pablo Fernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ORT-PabloFernandez/TP2A/issues"
+  },
+  "homepage": "https://github.com/ORT-PabloFernandez/TP2A#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "validator": "^13.0.0"
+  }
+}
